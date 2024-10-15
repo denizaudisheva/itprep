@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contact</title>
+        <link rel="stylesheet" href="style.css" />
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+        ></script>
+        <script type="text/javascript">
+            (function () {
+                emailjs.init({
+                    publicKey: "XmbucBUA_IZZhLUQR",
+                });
+            })();
+        </script>
+        <script type="text/javascript">
+            window.onload = function () {
+                document
+                    .getElementById("contact-form")
+                    .addEventListener("submit", function (event) {
+                        event.preventDefault();
+                        // these IDs from the previous steps
+                        emailjs
+                            .sendForm(
+                                "service_g08pqfc",
+                                "template_2dlf4zw",
+                                this
+                            )
+                            .then(
+                                () => {
+                                    console.log("SUCCESS!");
+                                },
+                                (error) => {
+                                    console.log("FAILED...", error);
+                                }
+                            );
+                    });
+            };
+        </script>
+    </head>
+    <body>
+        <header class="sub-header">
+            <nav>
+                <a href="index.html"
+                    ><img src="logo.svg" alt="logo" class="logo"
+                /></a>
+
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">Q&A</a></li>
+                        <li><a href="course.html">Новости</a></li>
+                        <li><a href="blog.html">О нас</a></li>
+                        <li><a href="contact.html">Отзывы</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="textbox">
+                <h1>Отзывы</h1>
+                <p>Страница для отзывов</p>
+            </div>
+        </header>
+
+        <main>
+            <section class="main-1-contact">
+                <div class="container-main-1-contact">
+                    <h1>Оставьте свой отзыв или вопрос!</h1>
+                    <div class="review-form-container">
+                        <h2>Оставить отзыв</h2>
+                        <form class="review-form" id="contact-form">
+                            <label for="name">Ваше имя:</label>
+                            <input type="text" id="name" name="name" required />
+                            <label for="review">Ваш отзыв:</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                required
+                            ></textarea>
+                            <button type="submit">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
