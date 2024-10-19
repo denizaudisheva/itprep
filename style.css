@@ -50,6 +50,7 @@ nav img {
 }
 
 .nav-links ul li::after {
+    /*анимация*/
     content: "";
     width: 0%;
     height: 2px;
@@ -60,6 +61,7 @@ nav img {
 }
 
 .nav-links ul li:hover::after {
+    /*анимация*/
     width: 100%;
 }
 
@@ -278,10 +280,12 @@ main {
 }
 
 .cards-item-main-2:hover .back-main-2 {
+    /*анимация*/
     transform: rotateY(0);
 }
 
 .cards-item-main-2:hover .front-main-2 {
+    /*анимация*/
     transform: rotateY(-180deg);
 }
 
@@ -499,7 +503,7 @@ footer {
 }
 
 .news-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /*анимация*/
 }
 
 .news-link {
