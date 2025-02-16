@@ -71,6 +71,20 @@ nav img {
     font-size: 15px;
 }
 
+.cards-item-main-2:hover .back-main-2 {
+    /*анимация*/
+    transform: rotateY(0);
+}
+
+.cards-item-main-2:hover .front-main-2 {
+    /*анимация*/
+    transform: rotateY(-180deg);
+}
+
+.news-card:hover {
+    transform: translateY(-5px); /*анимация*/
+}
+
 .textbox {
     width: 90%;
     color: #fff;
@@ -277,16 +291,6 @@ main {
 
 .back-main-2 p {
     color: #000;
-}
-
-.cards-item-main-2:hover .back-main-2 {
-    /*анимация*/
-    transform: rotateY(0);
-}
-
-.cards-item-main-2:hover .front-main-2 {
-    /*анимация*/
-    transform: rotateY(-180deg);
 }
 
 .cards-img-main-2 {
@@ -500,10 +504,6 @@ footer {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     transition: transform 0.3s ease;
-}
-
-.news-card:hover {
-    transform: translateY(-5px); /*анимация*/
 }
 
 .news-link {
