@@ -1,101 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- Google tag (gtag.js) -->
-        <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-7LZZBY9PC6"
-        ></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag("js", new Date());
-
-            gtag("config", "G-7LZZBY9PC6");
-        </script>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Contact</title>
         <link rel="stylesheet" href="style.css" />
+
+        <!-- Подключение EmailJS -->
         <script
             type="text/javascript"
             src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
         ></script>
-        <script type="text/javascript">
-            (function () {
-                emailjs.init({
-                    publicKey: "XmbucBUA_IZZhLUQR",
-                });
-            })();
-        </script>
-        <script type="text/javascript">
-            window.onload = function () {
-                document
-                    .getElementById("contact-form")
-                    .addEventListener("submit", function (event) {
-                        event.preventDefault();
-                        // these IDs from the previous steps
-                        emailjs
-                            .sendForm(
-                                "service_g08pqfc",
-                                "template_2dlf4zw",
-                                this
-                            )
-                            .then(
-                                () => {
-                                    console.log("SUCCESS!");
-                                },
-                                (error) => {
-                                    console.log("FAILED...", error);
-                                }
-                            );
-                    });
-            };
-        </script>
-        <!-- Yandex.Metrika counter -->
-        <script type="text/javascript">
-            (function (m, e, t, r, i, k, a) {
-                m[i] =
-                    m[i] ||
-                    function () {
-                        (m[i].a = m[i].a || []).push(arguments);
-                    };
-                m[i].l = 1 * new Date();
-                for (var j = 0; j < document.scripts.length; j++) {
-                    if (document.scripts[j].src === r) {
-                        return;
-                    }
-                }
-                (k = e.createElement(t)),
-                    (a = e.getElementsByTagName(t)[0]),
-                    (k.async = 1),
-                    (k.src = r),
-                    a.parentNode.insertBefore(k, a);
-            })(
-                window,
-                document,
-                "script",
-                "https://mc.yandex.ru/metrika/tag.js",
-                "ym"
-            );
-
-            ym(99936617, "init", {
-                clickmap: true,
-                trackLinks: true,
-                accurateTrackBounce: true,
-            });
-        </script>
-        <noscript
-            ><div>
-                <img
-                    src="https://mc.yandex.ru/watch/99936617"
-                    style="position: absolute; left: -9999px"
-                    alt=""
-                /></div
-        ></noscript>
-        <!-- /Yandex.Metrika counter -->
     </head>
     <body>
         <header class="sub-header">
@@ -103,7 +18,6 @@
                 <a href="index.html"
                     ><img src="logo.svg" alt="logo" class="logo"
                 /></a>
-
                 <div class="nav-links">
                     <ul>
                         <li><a href="index.html">Главная</a></li>
@@ -114,7 +28,6 @@
                     </ul>
                 </div>
             </nav>
-
             <div class="textbox">
                 <h1>Отзывы</h1>
                 <p>Страница для отзывов</p>
@@ -142,6 +55,7 @@
                 </div>
             </section>
         </main>
+
         <!-- Модальное окно -->
         <div id="feedbackModal" class="modal">
             <div class="modal-content">
@@ -150,38 +64,7 @@
             </div>
         </div>
 
-        <!-- Стили для модального окна -->
-        <style>
-            .modal {
-                display: none;
-                position: fixed;
-                z-index: 1000;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
-            }
-
-            .modal-content {
-                background-color: #fff;
-                margin: 15% auto;
-                padding: 20px;
-                border-radius: 10px;
-                width: 300px;
-                text-align: center;
-            }
-
-            .close {
-                color: #aaa;
-                float: right;
-                font-size: 24px;
-                cursor: pointer;
-            }
-
-            .close:hover {
-                color: black;
-            }
-        </style>
+        <!-- Подключение скрипта -->
+        <script src="script.js" defer></script>
     </body>
 </html>
